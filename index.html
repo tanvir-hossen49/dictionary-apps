@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/index.css" />
-  <title>English To Bangla Dictionary</title>
+    <script src="js/dictionary.js" defer></script>
+    <script src="js/main.js" defer></script>
 
-</head>
+    <title>English To Bangla Dictionary</title>
+  </head>
 
-<body>
-  <div class="main-container">
-    <header>
-      <h3>English To Bangla Dictionary</h3>
-    </header>
+  <body>
+    <div class="main-container">
+      <header>
+        <h3>English To Bangla Dictionary</h3>
+      </header>
 
-    <div class="main-content">
-      <input type="text" id="input-field" autofocus="true" placeholder="Enter Your Word" />
-      <div class="error">
+      <div class="main-content">
+        <input
+          type="text"
+          id="input-field"
+          autofocus="true"
+          placeholder="Enter Your Word"
+        />
+        <div class="error"></div>
 
+        <ul class="show-details">
+          <li class="row">
+            <div class="col">
+              <p class="row-heading">Meaning(Bangla)</p>
+              <span id="meaning"></span>
+            </div>
+          </li>
+          <li class="row">
+            <div class="col">
+              <p class="row-heading">Example(English)</p>
+              <span id="example"></span>
+            </div>
+          </li>
+          <li class="row">
+            <div class="col">
+              <p class="row-heading">Synonyms(Bangla)</p>
+              <div id="synonymsBangla"></div>
+            </div>
+          </li>
+          <li class="row">
+            <div class="col">
+              <p class="row-heading">Synonyms(English)</p>
+              <div id="synonymsEnglish"></div>
+            </div>
+          </li>
+        </ul>
       </div>
-
-      <ul class="show-details">
-        <li class="row">
-          <div class="col">
-            <p class="row-heading">Meaning(Bangla)</p>
-            <span id="meaning"></span>
-          </div>
-        </li>
-        <li class="row">
-          <div class="col">
-            <p class="row-heading">Example(English)</p>
-            <span id="example"></span>
-          </div>
-        </li>
-        <li class="row">
-          <div class="col">
-            <p class="row-heading">Synonyms(Bangla)</p>
-            <div id="synonymsBangla"></div>
-          </div>
-        </li>
-        <li class="row">
-          <div class="col">
-            <p class="row-heading">Synonyms(English)</p>
-            <div id="synonymsEnglish"></div>
-          </div>
-        </li>
-      </ul>
     </div>
-  </div>
-  <script src="js/dictionary.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

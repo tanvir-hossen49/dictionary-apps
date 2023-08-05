@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,13 @@ body {
   justify-content: center;
   align-items: center;
   background: #2d65c3;
+  font-family: "Roboto", sans-serif;
+}
+a,
+a:visited,
+a:active {
+  color: rgb(54, 54, 191);
+  text-decoration: none;
 }
 .main-container {
   width: 450px;
@@ -21,6 +30,7 @@ body {
 header {
   text-align: center;
   font-size: 25px;
+  font-weight: 700;
 }
 
 .main-content input {
@@ -39,17 +49,17 @@ header {
   overflow: hidden;
   transition: all 0.4s ease-in-out;
 }
-.main-container .show-details.active{
+.main-container .show-details.active {
   margin-top: 1rem;
   height: 50vh;
   max-height: 60vh;
   overflow-y: auto;
   opacity: 1;
 }
-.show-details.active::-webkit-scrollbar{
+.show-details.active::-webkit-scrollbar {
   width: 0;
 }
-.show-details .row:first-child{
+.show-details .row:first-child {
   border-top: none;
 }
 .show-details .row {
@@ -57,7 +67,7 @@ header {
   border-top: 1px solid #808080;
   list-style: none;
 }
-.row-heading{
+.row-heading {
   margin-bottom: 0.5rem;
   text-decoration: underline wavy rgb(189, 189, 189);
 }
@@ -83,14 +93,13 @@ header {
 }
 .error-text {
   color: red;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
 }
 
-
 /* responsive */
 @media (max-width: 480px) {
-  .main-container{
+  .main-container {
     width: calc(100vw - 20vw);
   }
 }
