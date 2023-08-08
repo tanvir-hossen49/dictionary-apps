@@ -2,13 +2,12 @@ const userInputEl = document.getElementById("input-field");
 
 //find targeted object
 const findTargetObject = userInput => {
-  for (let word of dictionary) {
-    if (userInput === word.en) {
-      showDOM(word);
-      return;
-    } else {
-      showError(userInput);
-    }
+  const matchingWord = dictionary.find(word => userInput === word.en);
+
+  if (matchingWord) {
+    showDOM(matchingWord);
+  } else {
+    showError(userInput);
   }
 };
 
@@ -26,26 +25,22 @@ const showDOM = targetOBJ => {
   showDetailsEl.classList.add("active");
 
   meaningEL.innerHTML = targetOBJ.bn;
-  sentenceEle.innerHTML = "";
+  sentenceEle.innerHTML = targetOBJ.sents
+    .map(sentence => `${sentence} <br>`)
+    .join("");
 
-  targetOBJ.sents.forEach(sentence => {
-    sentenceEle.innerHTML += `${sentence} <br>`;
-  });
+  banglaSynonyms.innerHTML = targetOBJ.bn_syns
+    .map(syns => `<p>${syns} <br> </p>`)
+    .join("");
 
-  targetOBJ.bn_syns.forEach(syns => {
-    banglaSynonyms.innerHTML += `
-            <p>${syns} <br> </p>
-        `;
-  });
+  englishSynonyms.innerHTML = targetOBJ.en_syns
+    .map(syns => `<p><a href='#'>${syns}</a> <br> </p>`)
+    .join("");
 
-  targetOBJ.en_syns.forEach(syns => {
-    englishSynonyms.innerHTML += `
-            <p><a href='#'>${syns}</a> <br> </p>
-        `;
-  });
-
-  [...englishSynonyms.children].forEach(ele => {
+  englishSynonyms.querySelectorAll("a").forEach(ele => {
     ele.addEventListener("click", e => {
+      e.preventDefault();
+
       let userText = ele.textContent.trim();
       userInputEl.value = userText;
       findTargetObject(userText);
